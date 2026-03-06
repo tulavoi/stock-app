@@ -1,0 +1,16 @@
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\bin\Debug\net9.0\StockApp.Application.deps.json
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\bin\Debug\net9.0\StockApp.Application.dll
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\bin\Debug\net9.0\StockApp.Application.pdb
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\bin\Debug\net9.0\StockApp.Domain.dll
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\bin\Debug\net9.0\StockApp.Domain.pdb
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.csproj.AssemblyReference.cache
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.AssemblyInfoInputs.cache
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.AssemblyInfo.cs
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.csproj.CoreCompileInputs.cache
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.20574D84.Up2Date
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.dll
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\refint\StockApp.Application.dll
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.pdb
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\ref\StockApp.Application.dll
+C:\Users\khach\OneDrive\Documents\ASP.Net\ASP.NetWebAPI\StockApp\StockApp.Application\obj\Debug\net9.0\StockApp.Application.sourcelink.json

@@ -1,0 +1,17 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.IdentityModel.JsonWebTokens;
+global using Microsoft.IdentityModel.Tokens;
+global using StockApp.Application.Interfaces;
+global using StockApp.Domain.Entities;
+global using StockApp.Domain.Interfaces;
+global using StockApp.Domain.ValueObjects;
+global using StockApp.Infrastructure.External;
+global using StockApp.Infrastructure.Persistence;
+global using StockApp.Infrastructure.Repositories;
+global using System.Security.Claims;
+global using System.Security.Cryptography;
+global using System.Text;

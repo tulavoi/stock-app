@@ -1,0 +1,210 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.application\\orders\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|solutionrelative:stockapp.application\\orders\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.application\\notifications\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|solutionrelative:stockapp.application\\notifications\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.application\\transactions\\services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|solutionrelative:stockapp.application\\transactions\\services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.application\\portfolios\\services\\portfolioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|solutionrelative:stockapp.application\\portfolios\\services\\portfolioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.application\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|solutionrelative:stockapp.application\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.application\\portfolios\\services\\iportfolioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2323E3CB-960F-43FE-BC73-D3A2E25EAACC}|StockApp.Application\\StockApp.Application.csproj|solutionrelative:stockapp.application\\portfolios\\services\\iportfolioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A972862-E85E-4B3D-B7FC-4B14343B32AE}|StockApp.Domain\\StockApp.Domain.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.domain\\entities\\portfolio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A972862-E85E-4B3D-B7FC-4B14343B32AE}|StockApp.Domain\\StockApp.Domain.csproj|solutionrelative:stockapp.domain\\entities\\portfolio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1052FD6-E901-479F-A4A3-092F0979DEE4}|StockApp.Infrastructure\\StockApp.Infrastructure.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.infrastructure\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1052FD6-E901-479F-A4A3-092F0979DEE4}|StockApp.Infrastructure\\StockApp.Infrastructure.csproj|solutionrelative:stockapp.infrastructure\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A972862-E85E-4B3D-B7FC-4B14343B32AE}|StockApp.Domain\\StockApp.Domain.csproj|c:\\users\\khach\\onedrive\\documents\\asp.net\\asp.netwebapi\\stockapp\\stockapp.domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A972862-E85E-4B3D-B7FC-4B14343B32AE}|StockApp.Domain\\StockApp.Domain.csproj|solutionrelative:stockapp.domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 193,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Domain\\Interfaces\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "StockApp.Domain\\Interfaces\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Domain\\Interfaces\\IOrderRepository.cs",
+              "RelativeToolTip": "StockApp.Domain\\Interfaces\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T08:07:51.859Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Infrastructure\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "StockApp.Infrastructure\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Infrastructure\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "StockApp.Infrastructure\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T08:08:46.348Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Orders\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "StockApp.Application\\Orders\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Orders\\Services\\OrderService.cs",
+              "RelativeToolTip": "StockApp.Application\\Orders\\Services\\OrderService.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwEAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T08:47:46.317Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Portfolio.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Domain\\Entities\\Portfolio.cs",
+              "RelativeDocumentMoniker": "StockApp.Domain\\Entities\\Portfolio.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Domain\\Entities\\Portfolio.cs",
+              "RelativeToolTip": "StockApp.Domain\\Entities\\Portfolio.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwCAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T09:45:56.111Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PortfolioService.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Portfolios\\Services\\PortfolioService.cs",
+              "RelativeDocumentMoniker": "StockApp.Application\\Portfolios\\Services\\PortfolioService.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Portfolios\\Services\\PortfolioService.cs",
+              "RelativeToolTip": "StockApp.Application\\Portfolios\\Services\\PortfolioService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwBIAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T09:05:20.146Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Notifications\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "StockApp.Application\\Notifications\\Services\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Notifications\\Services\\NotificationService.cs",
+              "RelativeToolTip": "StockApp.Application\\Notifications\\Services\\NotificationService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:10:28.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Transactions\\Services\\TransactionService.cs",
+              "RelativeDocumentMoniker": "StockApp.Application\\Transactions\\Services\\TransactionService.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Transactions\\Services\\TransactionService.cs",
+              "RelativeToolTip": "StockApp.Application\\Transactions\\Services\\TransactionService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:09:52.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "StockApp.Application\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "StockApp.Application\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T08:52:20.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IPortfolioService.cs",
+              "DocumentMoniker": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Portfolios\\Services\\IPortfolioService.cs",
+              "RelativeDocumentMoniker": "StockApp.Application\\Portfolios\\Services\\IPortfolioService.cs",
+              "ToolTip": "C:\\Users\\khach\\OneDrive\\Documents\\ASP.Net\\ASP.NetWebAPI\\StockApp\\StockApp.Application\\Portfolios\\Services\\IPortfolioService.cs",
+              "RelativeToolTip": "StockApp.Application\\Portfolios\\Services\\IPortfolioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T08:05:02.625Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 241,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 241,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

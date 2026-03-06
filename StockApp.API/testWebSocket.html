@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Company Name</th>
+                <th>Index</th>
+                <th>Sector</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>% Change</th>
+                <th>Volume</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+</body>
+
+<script>
+    const page = 1;
+    const limit = 10;
+    const socket = new WebSocket(`wss://localhost:7283/api/quotes/ws?page=${page}&limit=${limit}`);
+    //const socket = new WebSocket(`wss://localhost:7283/api/quotes/ws`);
+    socket.onopen = () => {
+        //debugger;
+        console.log('Connected to the server via WebSocket');
+    }
+
+    socket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        //debugger;
+        console.log(data);
+        const tableBody = document.getElementById('table-body');
+
+        // Xóa dữ liệu cũ
+        while (tableBody.firstChild) {
+            tableBody.removeChild(tableBody.firstChild);
+        }
+
+        // Thêm dữ liệu mới
+        data.forEach(item => {
+            const row = document.createElement('tr');
+
+            // Symbol
+            const symbolCell = document.createElement('td');
+            symbolCell.textContent = item.symbol;
+            row.appendChild(symbolCell);
+
+            // Company Name
+            const nameCell = document.createElement('td');
+            nameCell.textContent = item.companyName;
+            row.appendChild(nameCell);
+
+            // Index
+            const indexCell = document.createElement('td');
+            indexCell.textContent = item.indexName;
+            row.appendChild(indexCell);
+
+            // Sector
+            const sectorCell = document.createElement('td');
+            sectorCell.textContent = item.sectorEn ?? '';
+            row.appendChild(sectorCell);
+
+            // Price
+            const priceCell = document.createElement('td');
+            priceCell.textContent = item.price?.toFixed(2);
+            row.appendChild(priceCell);
+
+            // Change
+            const changeCell = document.createElement('td');
+            changeCell.textContent = item.change?.toFixed(2);
+            row.appendChild(changeCell);
+
+            // % Change
+            const percentCell = document.createElement('td');
+            percentCell.textContent = (item.percentChange?.toFixed(2) ?? '0') + '%';
+            row.appendChild(percentCell);
+
+            // Volume
+            const volumeCell = document.createElement('td');
+            volumeCell.textContent = item.volume?.toLocaleString();
+            row.appendChild(volumeCell);
+
+            // Time
+            const timestampCell = document.createElement('td');
+            const time = new Date(Date.parse(item.timeStamp));
+            timestampCell.textContent = time.toLocaleTimeString();
+            row.appendChild(timestampCell);
+
+            tableBody.appendChild(row);
+        });
+    }
+
+    socket.onclose = () => {
+        console.log('Disconnected from the server');
+    }
+</script>
+</html>
