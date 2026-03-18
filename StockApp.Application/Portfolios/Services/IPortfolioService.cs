@@ -6,6 +6,9 @@ public interface IPortfolioService
 		Guid stockId,
 		OrderDirection direction,
 		int quantity,
-		decimal price
+		decimal price,
+		CancellationToken cancellationToken
 	);
+	Task<int> GetAvailableStockQuantityAsync(Guid userId, Guid stockId, CancellationToken cancellationToken);
+	Task<IEnumerable<PortfolioDto>> GetUserPortfolioAsync(Guid userId, CancellationToken cancellationToken);
 }

@@ -11,7 +11,18 @@ public static class OrderMapper
 			Type = request.Type,
 			Direction = request.Direction,
 			Quantity = request.Quantity,
-			Price = request.Price,
+			RequestedPrice = request.RequestedPrice,
+		};
+	}
+
+	public static UpdateOrderDto ToUpdateOrderDto(this UpdateOrderRequest request, Guid userId, Guid orderId)
+	{
+		return new UpdateOrderDto
+		{
+			UserId = userId,
+			OrderId = orderId,
+			Quantity = request.Quantity,
+			RequestedPrice = request.RequestedPrice,
 		};
 	}
 
@@ -27,8 +38,10 @@ public static class OrderMapper
 			Direction = dto.Direction,
 			Status = dto.Status,
 			Quantity = dto.Quantity,
-			Price = dto.Price,
-			OrderDate = dto.OrderDate
+			RequestedPrice = dto.RequestedPrice,
+			OrderDate = dto.OrderDate,
+			ExecutedPrice = dto.ExecutedPrice,
+			ExecutedDate = dto.ExecutedDate
 		};
 	}
 }

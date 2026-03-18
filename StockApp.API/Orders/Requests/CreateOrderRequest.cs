@@ -6,5 +6,5 @@ public class CreateOrderRequest
 	public OrderType Type { get; set; }
 	public OrderDirection Direction { get; set; }
 	public int Quantity { get; set; }
-	public decimal? Price { get; set; } = 0;
+	public decimal? RequestedPrice { get; set; }
 }

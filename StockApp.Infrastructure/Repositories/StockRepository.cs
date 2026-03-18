@@ -1,6 +1,4 @@
-﻿using StockApp.Domain.Entities.Stocks;
-
-namespace StockApp.Infrastructure.Repositories;
+﻿namespace StockApp.Infrastructure.Repositories;
 
 public class StockRepository : IStockRepository
 {
@@ -40,6 +38,8 @@ public class StockRepository : IStockRepository
 				EF.Functions.Collate(s.Industry, "SQL_Latin1_General_CP1_CI_AI").Contains(keyword));
 		}
 
+		var totalCount = await query.LongCountAsync(cancellationToken);
+
 		// Sorting
 		query = sortBy?.ToLower() switch
 		{
@@ -49,13 +49,11 @@ public class StockRepository : IStockRepository
 			_ => query.OrderBy(s => s.Symbol) // default
 		};
 
-		var totalCount = await query.LongCountAsync(cancellationToken);
-
 		// Pagination
 		var items = await query
 			.Skip((pageNumber - 1) * pageSize)
 			.Take(pageSize)
-			.ToListAsync();
+			.ToListAsync(cancellationToken);
 
 		return (items, totalCount);
 	}

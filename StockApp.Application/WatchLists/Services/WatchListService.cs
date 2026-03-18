@@ -25,9 +25,9 @@ public class WatchListService : IWatchListService
 		return Result<bool>.Success(true);
 	}
 
-	public async Task<IEnumerable<WatchListDto>> GetAllAsync(Guid userId)
+	public async Task<IEnumerable<WatchListDto>> GetAllAsync(Guid userId, CancellationToken cancellationToken)
 	{
-		var watchLists = await _watchListRepo.GetAllAsync(userId);
+		var watchLists = await _watchListRepo.GetAllAsync(userId, cancellationToken);
 		return watchLists.Select(wl => wl.ToWatchListDto());
 	}
 }

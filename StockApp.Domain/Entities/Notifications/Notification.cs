@@ -1,6 +1,4 @@
-﻿using StockApp.Domain.Entities.Users;
-
-namespace StockApp.Domain.Entities.Notifications;
+﻿namespace StockApp.Domain.Entities.Notifications;
 
 public class Notification
 {
@@ -13,19 +11,19 @@ public class Notification
 
 	public User User { get; set; } = null!;
 
-	private Notification(Guid userId, NotificationType type, string content)
+	private Notification(Guid userId, NotificationType type, string message)
 	{
 		Id = Guid.CreateVersion7();
 		UserId = userId;
 		Type = type;
-		Message = content;
+		Message = message;
 		IsRead = false;
 		CreatedAt = DateTime.UtcNow;
 	}
 
-	public static Notification Create(Guid userId,  NotificationType type, string content)
+	public static Notification Create(Guid userId,  NotificationType type, string message)
 	{
-		return new Notification(userId, type, content);
+		return new Notification(userId, type, message);
 	}
 
 	public void MarkAsRead() => IsRead = true;

@@ -1,7 +1,4 @@
-﻿using StockApp.Domain.Entities.Stocks;
-using System.Threading;
-
-namespace StockApp.Domain.Interfaces;
+﻿namespace StockApp.Domain.Interfaces;
 
 public interface IStockRepository
 {

@@ -23,12 +23,12 @@ public class WatchListRepository : IWatchListRepository
 		return await _db.WatchLists.AnyAsync(wl => wl.UserId == userId && wl.StockId == stockId);
 	}
 
-	public async Task<IEnumerable<WatchList>> GetAllAsync(Guid userId)
+	public async Task<IEnumerable<WatchList>> GetAllAsync(Guid userId, CancellationToken cancellationToken)
 	{
 		return await _db.WatchLists
 			.AsNoTracking()
 			.Where(wl => wl.UserId == userId)
 			.Include(x => x.Stock)
-			.ToListAsync();
+			.ToListAsync(cancellationToken);
 	}
 }

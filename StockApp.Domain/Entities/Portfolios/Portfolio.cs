@@ -1,7 +1,4 @@
-﻿using StockApp.Domain.Entities.Stocks;
-using StockApp.Domain.Entities.Users;
-
-namespace StockApp.Domain.Entities.Portfolios;
+﻿namespace StockApp.Domain.Entities.Portfolios;
 
 public class Portfolio
 {

@@ -1,6 +1,10 @@
 ﻿global using StockApp.Application.Portfolios.Errors;
+global using StockApp.Domain.Entities.Orders;
+global using StockApp.Domain.Entities.Portfolios;
 global using StockApp.Domain.Entities.Stocks;
+global using StockApp.Domain.Entities.Transactions;
 global using StockApp.Domain.Entities.Users;
+global using StockApp.Domain.Entities.WatchLists;
 global using StockApp.Domain.Enums;
 global using StockApp.Domain.Errors;
 global using StockApp.Domain.Results;

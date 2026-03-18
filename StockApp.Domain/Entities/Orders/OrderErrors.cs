@@ -12,7 +12,7 @@ public static class OrderErrors
 
 	public static readonly Error NotPending = Error.Conflict(
 		"Order.NotPending",
-		"Order is not in 'Pending' state and cannot be executed.",
+		"Order is not in 'Pending' state and cannot be execute or update.",
 		"status");
 
 	public static readonly Error MarketPriceUnavailable = Error.Failure(
@@ -67,4 +67,16 @@ public static class OrderErrors
 	public static readonly Error AlreadyExecuted = Error.Conflict(
 		"Order.AlreadyExecuted",
 		"Order has already been executed and cannot be executed again.");
+
+	public static readonly Error ExecutedPriceRequired = Error.Validation(
+		"Order.ExecutedPriceRequired",
+		"Executed price is required for a completed transaction.");
+
+	public static readonly Error Forbidden = Error.Forbidden(
+		"Order.Forbidden",
+		"You do not have permission to modify or access this order.");
+
+	public static readonly Error InsufficientStock = Error.Validation(
+		"Order.InsufficientStock",
+		"You don't have enough stock in your portfolio.");
 }

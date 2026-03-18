@@ -11,9 +11,9 @@ public class Order
 	public OrderStatus Status { get; private set; }
 
 	public int Quantity { get; private set; }
-	public int ExecuteQuantity { get; private set; }
-	public decimal? Price { get; private set; }
-	public decimal? ExecutePrice { get; private set; }
+	public int ExecutedQuantity { get; private set; }
+	public decimal? RequestedPrice { get; private set; }
+	public decimal? ExecutedPrice { get; private set; }
 	public DateTime OrderDate { get; private set; }
 	public DateTime? ExecutedDate { get; private set; }
 
@@ -23,7 +23,7 @@ public class Order
 	private Order() { }
 
 	private Order(Guid userId, Guid stockId, OrderType type,
-				 OrderDirection direction, int quantity, decimal? price)
+				 OrderDirection direction, int quantity, decimal? requestedPrice)
 	{
 		Id = Guid.CreateVersion7();
 		UserId = userId;
@@ -31,27 +31,29 @@ public class Order
 		Type = type;
 		Direction = direction;
 		Quantity = quantity;
-		Price = price;
+		RequestedPrice = requestedPrice;
 		Status = OrderStatus.Pending;
 		OrderDate = DateTime.UtcNow;
 	}
 
-	public static Result<Order> CreateMarketOrder(Guid userId, Guid stockId, OrderDirection direction, int quantity)
+	public static Result<Order> CreateMarketOrder(Guid userId, Guid stockId, OrderDirection direction, int quantity, decimal? requestedPrice)
 	{
+		if (requestedPrice.HasValue) return Result<Order>.Failure(OrderErrors.PriceNotAllowed);
+
 		if (quantity <= 0) return Result<Order>.Failure(OrderErrors.InvalidQuantity);
 
-		var order = new Order(userId, stockId, OrderType.Market, direction, quantity, price: null);
+		var order = new Order(userId, stockId, OrderType.Market, direction, quantity, requestedPrice: null);
 
 		return Result<Order>.Success(order);
 	}
 
-	public static Result<Order> CreateLimitOrder(Guid userId, Guid stockId, OrderDirection direction, int quantity, decimal price)
+	public static Result<Order> CreateLimitOrder(Guid userId, Guid stockId, OrderDirection direction, int quantity, decimal limitPrice)
 	{
 		if (quantity <= 0) return Result<Order>.Failure(OrderErrors.InvalidQuantity);
 
-		if (price <= 0) return Result<Order>.Failure(OrderErrors.InvalidPrice);
+		if (limitPrice <= 0) return Result<Order>.Failure(OrderErrors.InvalidPrice);
 
-		var order = new Order(userId, stockId, OrderType.Market, direction, quantity, price: price);
+		var order = new Order(userId, stockId, OrderType.Limit, direction, quantity, requestedPrice: limitPrice);
 
 		return Result<Order>.Success(order);
 	}
@@ -62,9 +64,33 @@ public class Order
 
 		if (stopPrice <= 0) return Result<Order>.Failure(OrderErrors.InvalidPrice);
 
-		var order = new Order(userId, stockId, OrderType.Market, direction, quantity, price: stopPrice);
+		var order = new Order(userId, stockId, OrderType.Stop, direction, quantity, requestedPrice: stopPrice);
 
 		return Result<Order>.Success(order);
+	}
+
+	public Result Update(int newQuantity, decimal? newRequestedPrice)
+	{
+		if (newQuantity <= 0)
+			return Result.Failure(OrderErrors.InvalidQuantity);
+
+		// Limit Order và Stop Order yêu cầu phải có giá và giá phải > 0
+		if (Type == OrderType.Limit || Type == OrderType.Stop)
+		{
+			if (!newRequestedPrice.HasValue) return Result.Failure(OrderErrors.PriceRequired);
+			if (newRequestedPrice.Value <= 0) return Result.Failure(OrderErrors.InvalidPrice);
+		}
+		// Market Order không cho phép cập nhật giá
+		else
+		{
+			if (newRequestedPrice.HasValue) return Result.Failure(OrderErrors.PriceNotAllowed);
+			RequestedPrice = null;
+		}
+
+		Quantity = newQuantity;
+		RequestedPrice = newRequestedPrice;
+
+		return Result.Success();
 	}
 
 	public Result MarkExecuted(decimal executedPrice, int executedQuantity)
@@ -78,8 +104,8 @@ public class Order
 		if (executedPrice <= 0)
 			return Result.Failure(OrderErrors.InvalidPrice);
 
-		ExecutePrice = executedPrice;
-		ExecuteQuantity = executedQuantity;
+		ExecutedPrice = executedPrice;
+		ExecutedQuantity = executedQuantity;
 		Status = OrderStatus.Executed;
 		ExecutedDate = DateTime.UtcNow;
 
@@ -102,24 +128,24 @@ public class Order
 
 	private Result CheckStopCondition(decimal marketPrice)
 	{
-		if (Direction == OrderDirection.Buy && marketPrice >= Price)
+		if (Direction == OrderDirection.Buy && marketPrice >= RequestedPrice)
 			return Result.Success();
 
-		if (Direction == OrderDirection.Sell && marketPrice <= Price)
+		if (Direction == OrderDirection.Sell && marketPrice <= RequestedPrice)
 			return Result.Success();
 
-		return Result.Failure(OrderErrors.StopConditionNotMet(marketPrice, Price, Direction));
+		return Result.Failure(OrderErrors.StopConditionNotMet(marketPrice, RequestedPrice, Direction));
 	}
 
 	private Result CheckLimitCondition(decimal marketPrice)
 	{
-		if (Direction == OrderDirection.Buy && marketPrice <= Price)
+		if (Direction == OrderDirection.Buy && marketPrice <= RequestedPrice)
 			return Result.Success();
 
-		if (Direction == OrderDirection.Sell && marketPrice >= Price)
+		if (Direction == OrderDirection.Sell && marketPrice >= RequestedPrice)
 			return Result.Success();
 
-		return Result.Failure(OrderErrors.LimitConditionNotMet(marketPrice, Price, Direction));
+		return Result.Failure(OrderErrors.LimitConditionNotMet(marketPrice, RequestedPrice, Direction));
 	}
 
 	public decimal CalculateExecutionPrice(decimal currMarketPrice)
@@ -139,9 +165,9 @@ public class Order
 	private decimal CalculateLimitExecutionPrice(decimal marketPrice)
 	{
 		if (Direction == OrderDirection.Buy)
-			return Math.Min(marketPrice, Price!.Value);
+			return Math.Min(marketPrice, RequestedPrice!.Value);
 
-		return Math.Max(marketPrice, Price!.Value);
+		return Math.Max(marketPrice, RequestedPrice!.Value);
 	}
 
 	//public List<string> Validate()

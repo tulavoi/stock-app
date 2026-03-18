@@ -1,7 +1,4 @@
-﻿
-using StockApp.Domain.Entities.Transactions;
-
-namespace StockApp.Infrastructure.Repositories;
+﻿namespace StockApp.Infrastructure.Repositories;
 
 public class TransactionRepository : ITransactionRepository
 {
@@ -12,9 +9,9 @@ public class TransactionRepository : ITransactionRepository
 		_db = db;
 	}
 
-	public async Task AddAsync(Transaction transaction)
+	public async Task AddAsync(Transaction transaction, CancellationToken cancellationToken)
 	{
 		_db.Transactions.Add(transaction);
-		await _db.SaveChangesAsync();
+		await _db.SaveChangesAsync(cancellationToken);
 	}
 }

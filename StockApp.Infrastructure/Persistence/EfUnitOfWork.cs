@@ -10,35 +10,36 @@ public class EfUnitOfWork : IUnitOfWork
 		_db = db;
 	}
 
-	public async Task BeginTransactionAsync()
+	public async Task BeginTransactionAsync(CancellationToken cancellationToken)
 	{
 		if (_transaction != null) return;
-		_transaction = await _db.Database.BeginTransactionAsync();
+		_transaction = await _db.Database.BeginTransactionAsync(cancellationToken);
 	}
 
-	public async Task CommitTransactionAsync()
+	public async Task CommitTransactionAsync(CancellationToken cancellationToken)
 	{
 		if (_transaction == null) return;
 
-		await _db.SaveChangesAsync();
-		await _transaction.CommitAsync();
+		await _db.SaveChangesAsync(cancellationToken);
+		await _transaction.CommitAsync(cancellationToken);
 
 		await _transaction.DisposeAsync();
 		_transaction = null;
 	}
 
-	public async Task RollbackTransactionAsync()
+	public async Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
 	{
 		if (_transaction == null) return;
 
-		await _transaction.RollbackAsync();
+		await _transaction.RollbackAsync(cancellationToken);
+
 		await _transaction.DisposeAsync();
 		_transaction = null;
 	}
 
-	public async Task SaveChangesAsync()
+	public async Task SaveChangesAsync(CancellationToken cancellationToken)
 	{
-		await _db.SaveChangesAsync();
+		await _db.SaveChangesAsync(cancellationToken);
 	}
 
 	public void Dispose()

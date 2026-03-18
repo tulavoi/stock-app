@@ -27,10 +27,10 @@ public class WatchListsController : BaseController
 	}
 
 	[HttpGet]
-	public async Task<IActionResult> GetAllWatchLists()
+	public async Task<IActionResult> GetAllWatchLists(CancellationToken cancellationToken)
 	{
 		var userId = GetUserId();
-		var watchList = await _watchListService.GetAllAsync(userId);
+		var watchList = await _watchListService.GetAllAsync(userId, cancellationToken);
 		return Ok(watchList.Select(wl => wl.ToWatchListResponse()));
 	}
 }

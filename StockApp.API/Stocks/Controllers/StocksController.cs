@@ -1,6 +1,4 @@
-﻿using StockApp.Application.Commons;
-
-namespace StockApp.API.Stocks.Controllers;
+﻿namespace StockApp.API.Stocks.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

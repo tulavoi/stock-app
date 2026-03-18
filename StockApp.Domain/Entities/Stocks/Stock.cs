@@ -1,6 +1,4 @@
-﻿using StockApp.Domain.Entities.WatchLists;
-
-namespace StockApp.Domain.Entities.Stocks;
+﻿namespace StockApp.Domain.Entities.Stocks;
 
 public class Stock
 {

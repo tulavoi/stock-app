@@ -1,4 +1,4 @@
-﻿using StockApp.Domain.Entities.Portfolios;
+﻿using StockApp.Application.Portfolios.Mappers;
 
 namespace StockApp.Application.Portfolios.Services;
 
@@ -11,9 +11,11 @@ public class PortfolioService : IPortfolioService
 		_portfolioRepo = portfolioRepo;
 	}
 
-	public async Task<Result> ApplyOrderAsync(Guid userId, Guid stockId, OrderDirection direction, int quantity, decimal price)
+	public async Task<Result> ApplyOrderAsync(
+		Guid userId, Guid stockId, OrderDirection direction, 
+		int quantity, decimal price, CancellationToken cancellationToken)
 	{
-		var portfolio = await _portfolioRepo.GetByUserAndStockAsync(userId, stockId);
+		var portfolio = await _portfolioRepo.GetByUserAndStockAsync(userId, stockId, cancellationToken);
 
 		// Case 1: Chưa có Portfolio
 		if (portfolio is null)
@@ -24,7 +26,7 @@ public class PortfolioService : IPortfolioService
 
 			if (createResult.IsFailure) return Result.Failure(createResult.Errors);
 
-			await _portfolioRepo.AddAsync(createResult.Value);
+			await _portfolioRepo.AddAsync(createResult.Value, cancellationToken);
 
 			return Result.Success();
 		}
@@ -34,7 +36,19 @@ public class PortfolioService : IPortfolioService
 
 		if (result.IsFailure) return result;
 
-		await _portfolioRepo.UpdateAsync(portfolio);
+		await _portfolioRepo.UpdateAsync(portfolio, cancellationToken);
 		return Result.Success();
+	}
+
+	public async Task<int> GetAvailableStockQuantityAsync(Guid userId, Guid stockId, CancellationToken cancellationToken)
+	{
+		return await _portfolioRepo.GetTotalQuantityAsync(userId, stockId, cancellationToken);
+	}
+
+	public async Task<IEnumerable<PortfolioDto>> GetUserPortfolioAsync(Guid userId, CancellationToken cancellationToken)
+	{
+		var portfolios = await _portfolioRepo.GetByUserIdAsync(userId, cancellationToken);
+
+		return portfolios.Select(p => p.ToPortfolioDto());
 	}
 }

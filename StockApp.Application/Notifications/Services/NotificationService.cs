@@ -1,7 +1,4 @@
-﻿using StockApp.Domain.Entities.Notifications;
-using StockApp.Domain.Entities.Orders;
-
-namespace StockApp.Application.Notifications.Services;
+﻿namespace StockApp.Application.Notifications.Services;
 
 public class NotificationService : INotificationService
 {

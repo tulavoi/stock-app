@@ -21,7 +21,7 @@ public class UserService : IUserService
 	public async Task<Result<PagedList<UserDto>>> GetAllAsync(UserQuery query, CancellationToken cancellationToken)
 	{
 		var (users, totalCount) = await _userRepo.GetAllAsync(
-			query.IsDecsending, 
+			query.IsDescending, 
 			query.SortBy, 
 			query.PageNumber, 
 			query.PageSize, 

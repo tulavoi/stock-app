@@ -1,6 +1,4 @@
-﻿using StockApp.Domain.Entities.Stocks;
-
-namespace StockApp.Application.Stocks.Mappers;
+﻿namespace StockApp.Application.Stocks.Mappers;
 
 public static class StockMapper
 {

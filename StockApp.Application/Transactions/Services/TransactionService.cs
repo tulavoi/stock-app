@@ -1,7 +1,4 @@
-﻿using StockApp.Domain.Entities.Orders;
-using StockApp.Domain.Entities.Transactions;
-
-namespace StockApp.Application.Transactions.Services;
+﻿namespace StockApp.Application.Transactions.Services;
 
 public class TransactionService : ITransactionService
 {
@@ -12,19 +9,22 @@ public class TransactionService : ITransactionService
 		_transactionRepo = transactionRepo;
 	}
 
-	public async Task<Result> ApplyOrderTransactionAsync(Guid userId, Order order)
+	public async Task<Result> ApplyOrderTransactionAsync(Order order, CancellationToken cancellationToken)
 	{
-		var amount = order.Price * order.Quantity;
+		if (!order.ExecutedPrice.HasValue)
+			return Result.Failure(OrderErrors.ExecutedPriceRequired);
+
+		var amount = order.ExecutedPrice.Value * order.Quantity;
 
 		var type = order.Direction == OrderDirection.Buy
 			? TransactionType.Withdrawal
 			: TransactionType.Deposit;
 
-		var transactionResult = Transaction.Create(userId, type, amount!.Value);
+		var transactionResult = Transaction.Create(order.UserId, type, amount);
 
 		if (transactionResult.IsFailure) return Result.Failure(transactionResult.Errors);
 
-		await _transactionRepo.AddAsync(transactionResult.Value);
+		await _transactionRepo.AddAsync(transactionResult.Value, cancellationToken);
 		return Result.Success();
 	}
 }

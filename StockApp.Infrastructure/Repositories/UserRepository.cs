@@ -1,6 +1,4 @@
-﻿using StockApp.Domain.Entities.Users;
-
-namespace StockApp.Infrastructure.Repositories;
+﻿namespace StockApp.Infrastructure.Repositories;
 
 public class UserRepository : IUserRepository
 {

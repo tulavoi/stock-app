@@ -1,6 +1,4 @@
-﻿using StockApp.Domain.Entities.Portfolios;
-
-namespace StockApp.Infrastructure.Repositories;
+﻿namespace StockApp.Infrastructure.Repositories;
 
 public class PortfolioRepository : IPortfolioRepository
 {
@@ -11,30 +9,39 @@ public class PortfolioRepository : IPortfolioRepository
 		_db = db;
 	}
 
-	public async Task AddAsync(Portfolio portfolio)
+	public async Task AddAsync(Portfolio portfolio, CancellationToken cancellationToken)
 	{
 		_db.Portfolios.Add(portfolio);
-		await _db.SaveChangesAsync();
+		await _db.SaveChangesAsync(cancellationToken);
 	}
 
-	public async Task<Portfolio?> GetByUserAndStockAsync(Guid userId, Guid stockId)
+	public async Task<Portfolio?> GetByUserAndStockAsync(Guid userId, Guid stockId,	CancellationToken cancellationToken)
 	{
 		return await _db.Portfolios
 			.AsNoTracking()
-			.FirstOrDefaultAsync(p => p.UserId == userId && p.StockId == stockId);
+			.FirstOrDefaultAsync(p => p.UserId == userId && p.StockId == stockId, cancellationToken);
 	}
 
-	public async Task<IEnumerable<Portfolio>> GetByUserIdAsync(Guid userId)
+	public async Task<IEnumerable<Portfolio>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken)
 	{
 		return await _db.Portfolios
 			.AsNoTracking()
+			.Include(p => p.Stock)
 			.Where(p => p.UserId == userId)
-			.ToListAsync();
+			.ToListAsync(cancellationToken);
 	}
 
-	public async Task UpdateAsync(Portfolio portfolio)
+	public async Task<int> GetTotalQuantityAsync(Guid userId, Guid stockId, CancellationToken cancellationToken)
+	{
+		var portfolio = await _db.Portfolios
+			.FirstOrDefaultAsync(p => p.UserId == userId && p.StockId == stockId, cancellationToken);
+
+		return portfolio?.Quantity ?? 0;
+	}
+
+	public async Task UpdateAsync(Portfolio portfolio, CancellationToken cancellationToken)
 	{
 		_db.Portfolios.Update(portfolio);
-		await _db.SaveChangesAsync();
+		await _db.SaveChangesAsync(cancellationToken);
 	}
 }

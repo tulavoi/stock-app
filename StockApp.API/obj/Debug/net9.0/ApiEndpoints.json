@@ -17,6 +17,72 @@
   },
   {
     "ContainingType": "StockApp.API.Orders.Controllers.OrdersController",
+    "Method": "GetUserOrders",
+    "RelativePath": "api/Orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StockId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Direction",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Statuses",
+        "Type": "System.Collections.Generic.List\u00601[[StockApp.Domain.Enums.OrderStatus, StockApp.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "FromDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ToDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsDescending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StockApp.API.Orders.Controllers.OrdersController",
     "Method": "GetById",
     "RelativePath": "api/Orders/{id}",
     "HttpMethod": "GET",
@@ -29,6 +95,53 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StockApp.API.Orders.Controllers.OrdersController",
+    "Method": "UpdateOrder",
+    "RelativePath": "api/Orders/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "StockApp.API.Orders.Requests.UpdateOrderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StockApp.API.Orders.Controllers.OrdersController",
+    "Method": "ExecuteOrderTest",
+    "RelativePath": "api/Orders/{id}/execute-test",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StockApp.API.Portfolios.PortfoliosController",
+    "Method": "GetUserPortfolio",
+    "RelativePath": "api/Portfolios/my-portfolio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -113,7 +226,7 @@
         "IsRequired": false
       },
       {
-        "Name": "IsDecsending",
+        "Name": "IsDescending",
         "Type": "System.Boolean",
         "IsRequired": false
       },
@@ -170,7 +283,7 @@
         "IsRequired": false
       },
       {
-        "Name": "IsDecsending",
+        "Name": "IsDescending",
         "Type": "System.Boolean",
         "IsRequired": false
       },

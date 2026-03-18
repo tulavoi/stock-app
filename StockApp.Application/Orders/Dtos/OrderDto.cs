@@ -14,6 +14,9 @@ public class OrderDto
 	public OrderStatus Status { get; set; }
 
 	public int Quantity { get; set; }
-	public decimal? Price { get; set; }
+	public decimal? RequestedPrice { get; set; }
 	public DateTime OrderDate { get; set; }
+
+	public decimal? ExecutedPrice { get; set; }
+	public DateTime? ExecutedDate { get; set; }
 }

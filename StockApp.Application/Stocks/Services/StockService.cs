@@ -13,7 +13,7 @@ public class StockService : IStockService
 	{
 		var (stocks, totalCount) = await _stockRepo.GetAllAsync(
 			cancellationToken,
-			query.IsDecsending, 
+			query.IsDescending, 
 			query.SortBy, 
 			query.PageNumber, 
 			query.PageSize, 

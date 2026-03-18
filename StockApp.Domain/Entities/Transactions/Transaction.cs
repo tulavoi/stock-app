@@ -1,6 +1,4 @@
-﻿using StockApp.Domain.Entities.Users;
-
-namespace StockApp.Domain.Entities.Transactions;
+﻿namespace StockApp.Domain.Entities.Transactions;
 
 public class Transaction
 {
